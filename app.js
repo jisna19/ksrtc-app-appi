@@ -17,6 +17,13 @@ app.post("/signup",(req,res)=>{
     console.log(user)
     res.send({"status":"success"})
 })
+app.post("/signup",(req,res)=>{
+    let input=req.body
+    let user=new usermodel(input)
+    user.save()
+    console.log(user)
+    res.send({"status":"success"})
+})
 
 
 
