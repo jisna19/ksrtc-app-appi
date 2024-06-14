@@ -24,6 +24,14 @@ app.post("/signup",async (req,res)=>{
     signup.save()
     res.json({"status":"success"})
 })
+app.post("/signup",(req,res)=>{
+    let input=req.body
+    let user=new usermodel(input)
+    user.save()
+    console.log(user)
+    res.send({"status":"success"})
+})
+
 
 
 app.listen(8080,()=>{
